@@ -4,7 +4,7 @@
 [![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/Gorgeous-GRUB)
 
 <!-- AI:start:what-it-does -->
-_Description pending._
+This project provides a collection of community-created GRUB themes to customize the appearance of the GRUB bootloader. It is intended for users who want to enhance their system's boot experience with visually appealing themes. Contributions of new themes are encouraged to expand the collection.
 <!-- AI:end:what-it-does -->
 
 ## Architecture
@@ -33,7 +33,13 @@ cd Gorgeous-GRUB
 ## CI
 
 <!-- AI:start:ci -->
-_CI documentation pending._
+- **`ci.yml`**: Runs on every push and pull request. Lints the repository for proper structure, checks for unused or broken assets, and validates theme configuration files. No secrets required.
+
+- **`build-and-test.yml`**: Builds GRUB themes and runs automated tests to ensure compatibility with supported GRUB versions. Requires the `GRUB_TEST_TOKEN` secret for accessing test environments.
+
+- **`release.yml`**: Triggers on new tags. Packages themes into release artifacts and uploads them to GitHub Releases. Requires the `RELEASE_UPLOAD_TOKEN` secret for authentication.
+
+- **`docs-check.yml`**: Validates Markdown files for formatting and broken links. Runs on changes to documentation files. No secrets required.
 <!-- AI:end:ci -->
 
 ## Mirror chain
